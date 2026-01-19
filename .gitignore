@@ -6,6 +6,9 @@ __pycache__/
 venv/
 .venv/
 
+# Temporary files
+*.pdf
+
 # Data files (PRIVATE)
 data/
 outputs/
