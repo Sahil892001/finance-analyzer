@@ -1,6 +1,8 @@
 import pdfplumber
 import pandas as pd
 import re
+from pathlib import Path
+import tempfile
 
 def pdf_to_csv(pdf_path: str, csv_path: str):
     """Extract PhonePe transactions from PDF and save them to CSV."""
@@ -24,6 +26,22 @@ def pdf_to_csv(pdf_path: str, csv_path: str):
                         })
 
     pd.DataFrame(transactions).to_csv(csv_path, index=False)
+
+
+def pdf_to_dataframe(pdf_path):
+    """
+    Convert PhonePe PDF directly into a DataFrame (Streamlit-friendly).
+    """
+    with tempfile.NamedTemporaryFile(suffix=".csv", delete=False) as tmp:
+        temp_csv_path = Path(tmp.name)
+
+    pdf_to_csv(pdf_path, temp_csv_path)
+    df = pd.read_csv(temp_csv_path)
+
+    return df
+
+
+
 
 
 if __name__ == "__main__":

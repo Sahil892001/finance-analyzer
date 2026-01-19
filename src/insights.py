@@ -12,8 +12,7 @@ def _filter_by_month(df: pd.DataFrame, month: str) -> pd.DataFrame:
     month: 'YYYY-MM' (recommended) or 'Mon-YYYY'
     """
     _validate_df(df)
-    m = df["Date"].dt.to_period("M").astype(str)
-    filtered = df[m == month]
+    filtered = df[df["Month"] == month]
     if filtered.empty:
         raise ValueError(f"No data available for month: {month}")
     return filtered
