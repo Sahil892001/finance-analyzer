@@ -35,7 +35,7 @@ It automates data extraction, enrichment, and visualization, allowing users to u
 
 1.  **PDF Processing**
 
-- Extracts transaction data from PhonePe PDFs using `pdfplumber`
+  - Extracts transaction data from PhonePe PDFs using `pdfplumber`
 
   
 
