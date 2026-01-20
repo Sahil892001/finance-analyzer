@@ -8,6 +8,12 @@ It automates data extraction, enrichment, and visualization, allowing users to u
 
 ---
 
+## 🌐 Live Demo
+
+👉 https://finance-analyzer-shex6p9baausugy5tvkeoj.streamlit.app/
+
+---
+
 ## ✨ Key Features
  
 
